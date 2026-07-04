@@ -398,7 +398,9 @@ add_libc_test(
     libc.src.fcntl.openat
     libc.src.stdlib.realpath
     libc.src.sys.stat.mkdirat
+    libc.src.unistd.chdir
     libc.src.unistd.close
+    libc.src.unistd.getcwd
     libc.src.unistd.unlinkat
     libc.test.UnitTest.ErrnoCheckingTest
     libc.test.UnitTest.ErrnoSetterMatcher
