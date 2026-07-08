@@ -2534,7 +2534,7 @@ def AMDGPUMaxNumWorkGroups : InheritableAttr {
 
 def AMDGPUNamedBarrierWrapper : InheritableAttr {
   let Spellings = [];
-  let Args = [];
+  let Args = [DeclArgument<Field, "WrappedField">];
   let Documentation = [InternalOnly];
   let SemaHandler = 0;
 }
