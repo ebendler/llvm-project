@@ -201,6 +201,7 @@ AMDGPUTargetInfo::AMDGPUTargetInfo(const llvm::Triple &Triple,
 
   AddrSpaceMap = &AMDGPUAddrSpaceMap;
   UseAddrSpaceMapMangling = true;
+  HasAMDGPUTypes = true;
 
   if (Triple.isAMDGCN()) {
     // __bf16 is always available as a load/store only type on AMDGCN.

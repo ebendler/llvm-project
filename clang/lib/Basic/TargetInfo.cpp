@@ -21,6 +21,7 @@
 #include "llvm/ADT/StringExtras.h"
 #include "llvm/Support/ErrorHandling.h"
 #include "llvm/TargetParser/TargetParser.h"
+#include "llvm/TargetParser/Triple.h"
 #include <cstdlib>
 using namespace clang;
 
@@ -168,6 +169,7 @@ TargetInfo::TargetInfo(const llvm::Triple &T) : Triple(T) {
   HasBuiltinZOSVaList = false;
   HasAArch64ACLETypes = false;
   HasRISCVVTypes = false;
+  HasAMDGPUTypes = (Triple.getVendor() == llvm::Triple::AMD);
   AllowAMDGPUUnsafeFPAtomics = false;
   HasUnalignedAccess = false;
   ARMCDECoprocMask = 0;

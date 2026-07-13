@@ -1074,7 +1074,13 @@ static FieldDecl *getNamedBarrierField(const RecordDecl *R) {
 }
 
 void SemaAMDGPU::checkNamedBarrierWrapper(RecordDecl *R) {
+  ASTContext &Context = getASTContext();
   if (R->isInvalidDecl())
+    return;
+
+  if (!Context.getTargetInfo().hasAMDGPUTypes() &&
+      (!Context.getAuxTargetInfo() ||
+       !Context.getAuxTargetInfo()->hasAMDGPUTypes()))
     return;
 
   bool IsWrapper = false;
@@ -1128,7 +1134,6 @@ void SemaAMDGPU::checkNamedBarrierWrapper(RecordDecl *R) {
     return;
 
   // Set the attribute even if the wrapper may be found to be invalid later.
-  ASTContext &Context = getASTContext();
   R->addAttr(
       AMDGPUNamedBarrierWrapperAttr::CreateImplicit(Context, SourceRange()));
 
