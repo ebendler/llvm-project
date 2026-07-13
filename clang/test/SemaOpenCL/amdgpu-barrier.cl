@@ -1,6 +1,7 @@
 // REQUIRES: amdgpu-registered-target
 // RUN: %clang_cc1 -verify -cl-std=CL1.2 -triple amdgcn-amd-amdhsa -Wno-unused-value %s
 // RUN: %clang_cc1 -verify -cl-std=CL2.0 -triple amdgcn-amd-amdhsa -Wno-unused-value %s
+// RUN: %clang_cc1 -fcuda-is-device -cl-std=CL2.0 -verify -triple x86_64 -aux-triple amdgcn -Wno-unused-value %s
 
 void foo() {
     typedef __amdgpu_named_workgroup_barrier_t SugaredArray[2];
