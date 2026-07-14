@@ -169,7 +169,7 @@ TargetInfo::TargetInfo(const llvm::Triple &T) : Triple(T) {
   HasBuiltinZOSVaList = false;
   HasAArch64ACLETypes = false;
   HasRISCVVTypes = false;
-  HasAMDGPUTypes = (Triple.getVendor() == llvm::Triple::AMD);
+  HasAMDGPUTypes = false;
   AllowAMDGPUUnsafeFPAtomics = false;
   HasUnalignedAccess = false;
   ARMCDECoprocMask = 0;

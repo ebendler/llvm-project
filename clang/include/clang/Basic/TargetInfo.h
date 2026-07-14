@@ -1076,7 +1076,7 @@ public:
   /// available on this target.
   bool hasAArch64ACLETypes() const { return HasAArch64ACLETypes; }
 
-  /// Returns whether or not the ANDGPU built-in types are
+  /// Returns whether or not the AMDGPU built-in types are
   /// available on this target.
   bool hasAMDGPUTypes() const { return HasAMDGPUTypes; }
 
