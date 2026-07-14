@@ -385,13 +385,23 @@ add_libc_test(
     realpath_test.cpp
   DEPENDS
     libc.hdr.errno_macros
+    libc.hdr.func.free
     libc.hdr.limits_macros
     libc.hdr.types.size_t
     libc.src.__support.CPP.string
+    libc.src.__support.CPP.string_view
+    libc.src.__support.CPP.utility
+    libc.src.__support.fixedvector
+    libc.src.__support.libc_errno
     libc.src.__support.macros.config
     libc.src.__support.OSUtil.path
+    libc.src.fcntl.openat
     libc.src.stdlib.realpath
+    libc.src.sys.stat.mkdirat
+    libc.src.unistd.close
+    libc.src.unistd.unlinkat
     libc.test.UnitTest.ErrnoCheckingTest
+    libc.test.UnitTest.ErrnoSetterMatcher
 )
 
 add_libc_test(
